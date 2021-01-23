@@ -90,5 +90,18 @@ Scan the QR Code
 <sub><b>YogaSakti</b></sub><br /></td>
     <td align="center"><a href="https://github.com/ItzNgga" target="_blank"><img src="https://avatars.githubusercontent.com/u/29621457?v=4" width="100px;" alt=""/></a><br />
 <sub><b>ItzNgga</b></sub><br /></td>
+    <td align="center"><a href="https://github.com/TobyG74" target="_blank"><img src="https://avatars.githubusercontent.com/u/32604979?v=4" width="100px;" alt=""/></a><br />
+<sub><b>TobyG74</b></sub><br /></td>
     </tr>
-</table>
+</table><br />
+And Much More
+
+## Rest API
+The Rest API that used in this project.<br />
+Don't forget to support them.
+- [JoJo API](https://docs-jojo.herokuapp.com)
+- [Melodicxt API](https://api-melodicxt-2.herokuapp.com)
+- [Zeks API](https://api.zeks.xyz)
+- [Tobz API](https://tobz-api.herokuapp.com)
+- [Terhambar.com](https://scrap.terhambar.com)
+- [CF's API](https://api.computerfreaker.cf)
