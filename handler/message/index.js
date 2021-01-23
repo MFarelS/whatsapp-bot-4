@@ -1,3 +1,10 @@
+/**
+ * This Script is modfication version of YogaSakti/imageToSticker
+ * for the original creator,
+ * 
+ * I hope you not mad to me, sorry
+ * I will credits you in README
+ */
 require('dotenv').config()
 const { decryptMedia, Client } = require('@open-wa/wa-automate')
 const moment = require('moment-timezone')
@@ -941,10 +948,9 @@ module.exports = msgHandler = async (client, message) => {
                 }
                 break
             case 'husbu':{
-                if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-                // const res = await fetch('http://docs-jojo.herokuapp.com/api/husbuando')
-                // const rest = await res.json()
-                // await client.sendFileFromUrl(from, rest.image, '', rest.waifu, id)
+                const res = await fetch('http://docs-jojo.herokuapp.com/api/husbuando')
+                const rest = await res.json()
+                await client.sendFileFromUrl(from, rest.image, '', rest.name, id)
             }
             break
         case 'anime':

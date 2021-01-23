@@ -1,16 +1,19 @@
 exports.textInfo = () => {
-    return `<======(THANKS TO)======>
-YogaSakti
-MhankBarBar
-SomnathDas
-ArugaZ
-Jojo
-Alvin
-Rafi
-ItsNgga
-Terror-Machine
-Dan masih banyak lagi
-<=========(END)=========>`
+    return `
+Source code / bot ini merupakan program open-source (gratis) yang ditulis menggunakan Javascript, kamu dapat menggunakan, menyalin, memodifikasi, menggabungkan, menerbitkan, mendistribusikan, mensublisensikan, dan atau menjual salinan dengan tanpa menghapus author utama dari source code / bot ini.
+Dengan menggunakan source code / bot ini maka anda setuju dengan Syarat dan Kondisi sebagai berikut:
+- Source code / bot tidak menyimpan data anda di server kami.
+- Source code / bot tidak bertanggung jawab atas sticker yang anda buat dari bot ini serta video, gambar maupun data lainnya yang anda dapatkan dari Source code / bot ini.
+ - Source code / bot tidak boleh digunakan untuk layanan yang bertujuan/berkontribusi dalam: 
+    • seks / perdagangan manusia
+    • perjudian
+    • perilaku adiktif yang merugikan 
+    • kejahatan
+    • kekerasan (kecuali jika diperlukan untuk melindungi keselamatan publik)
+    • pembakaran hutan / penggundulan hutan
+    • ujaran kebencian atau diskriminasi berdasarkan usia, jenis kelamin, identitas gender, ras, seksualitas, agama, kebangsaan
+Source Code BOT : https://github.com/FaizBastomi/whatsapp-bot
+NodeJS WhatsApp library: https://github.com/open-wa/wa-automate-nodejs`
 }
 
 exports.textDonasi = () => {
@@ -23,10 +26,6 @@ OVO: 085382618855`
 exports.textMenu = (pushname, prefix) => {
     return `Hi, *${pushname}!👋*
 
-*Penting‼*
-Harap periksa terlebih dahulu *${prefix}changelog*
-agar tahu perubahan pada bot‼
-
 _*${prefix}owner*_ = Nomor Pembuat Bot
 _*${prefix}stat*_ = Statistik Bot
 _*${prefix}donasi*_ = Donasi Ke Pembuat
@@ -34,7 +33,6 @@ _*${prefix}info*_ = Menampilkan Info Bot
 _*${prefix}listban*_ = Menampilkan List Banned
 _*${prefix}listblock*_ = Menampilkan List Blocked
 _*${prefix}bug*_ = Laporkan Bug Pada Bot
-    Contoh; ${prefix}bug ${prefix}jam tidak berfungsi
 
 _*${prefix}menu sticker*_ = Sticker Menu
 _*${prefix}menu text*_ = TextPro Menu
@@ -48,17 +46,14 @@ _*Owner Bot*_
 _*${prefix}bc*_ = Broadcast Pesan
     
 _*${prefix}leaveall*_ = Mengeluarkan Bot Dari Semua Grup
+
+_*${prefix}clearall*_ = Hapus Semua Chat
+
+_*${prefix}readall*_ = Baca Semua Pesan
     
 _*${prefix}ban*_ = Blokir Pengguna Dari Memakai Bot
 
-_*${prefix}setinfo*_ = Ganti Info Bot
-    
-⚠️ Gunakan bot dengan bijak‼️
-⚠️ Bot tidak aktif 24 Jam‼️
-⚠️ Bot memiliki fitur anti spam mohon beri delay 5 detik‼️
-⚠️ Jika ada fitur tidak bekerja mohon lapor dengan *${prefix}bug*‼️
-    
-⚠️ *Note: fitur yang dicoret dengan garis, berarti tidak berfungsi*`
+_*${prefix}setinfo*_ = Ganti Info Bot`
 }
 
 exports.Sticker = (prefix) => {
@@ -192,7 +187,7 @@ _*${prefix}aniquote*_ = Random Quote From Anime
 
 _*${prefix}waifu*_ = Random Waifu
 
-~_*${prefix}husbu*_ = Random Husbu~
+_*${prefix}husbu*_ = Random Husbu
     
 _*${prefix}hentai*_ = Random Hentai
         

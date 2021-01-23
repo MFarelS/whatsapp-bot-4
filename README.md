@@ -1,27 +1,35 @@
 <h1 align="center">WhatsApp Bot</h1>
+<p align="center">This project is the modification version of YogaSakti/imageToSticker</p>
 
 # Needed
 - NodeJS 14x [Download](https://nodejs.org/en/download)
 - LibWebP [Download](https://developers.google.com/speed/webp/download)
-- imagemagick [Download](https://imagemagick.org/script/download.php)<br />
+- imagemagick [Download](https://imagemagick.org/script/download.php) (checklist 1,2,3,5,6)
+- ffmpeg [Download](https://ffmpeg.org) [Tutorial](https://youtu.be/04Gf6TEnmjk)<br />
 To get YouTube Cookie [Add to Chrome](http://bit.ly/3pb05kJ)<br />
 To get YouTube ApiKey [Tutorial](https://www.slickremix.com/docs/get-api-key-for-youtube/)<br />
 Change ownerNumber [Here](https://github.com/FaizBastomi/whatsapp-bot/blob/b0c39845020f91202e538d909499d0ee17b02729/handler/message/index.js#L48) (Don't forget use `@c.us`)
 
-## Clone This Project
+# Get Started
+## Install
+Clone This Project
 ```bash
 > git clone https://github.com/FaizBastomi/whatsapp-bot.git
 > cd whatsapp-bot
 ```
-
-## Installing
+Install the dependencies:
 ```bash
 > npm install
 ```
+## Usage
+1. Run the WhatsApp Bot
+```bash
+> npm start
+```
 
-# Options
+## Options
 Edit options in index.js<br />
-## Windows
+### Windows
 ```js
 const options = {
     sessionId: 'bot',
@@ -49,7 +57,7 @@ const options = {
 }
 ```
 
-## Linux
+### Linux
 ```js
 const options = {
     sessionId: 'bot',
@@ -77,12 +85,14 @@ const options = {
 }
 ```
 
-## Start
-```bash
-> npm start
-```
-Scan the QR Code
+### Notes
+- Some Features are broken
+- You can add more features
+- More refactoring
 
+---
+
+# Credits
 ## Thanks To
 <table>
     <tr>
@@ -108,3 +118,8 @@ Don't forget to support them.
 - [Terhambar.com](https://scrap.terhambar.com)
 - [CF's API](https://api.computerfreaker.cf)
 - [Jikan.moe](https://api.jikan.moe)
+
+## Main Library
+- [wa-automate-nodejs](https://github.com/open-wa/wa-automate-nodejs)
+- [puppeteer](https://github.com/puppeteer/puppeteer)
+- [sharp](https://github.com/lovell/sharp)
