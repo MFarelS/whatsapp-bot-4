@@ -20,6 +20,7 @@ Change ownerNumber [Here](https://github.com/FaizBastomi/whatsapp-bot/blob/b0c39
 ```
 
 # Options
+Edit options in index.js<br />
 ## Windows
 ```js
 const options = {
@@ -81,3 +82,13 @@ const options = {
 > npm start
 ```
 Scan the QR Code
+
+## Thanks To
+<table>
+    <tr>
+    <td align="center"><a href="https://github.com/YogaSakti" target="_blank"><img src="https://avatars.githubusercontent.com/u/24309806?v=4" width="100px;" alt=""/></a><br />
+<sub><b>YogaSakti</b></sub><br /></td>
+    <td align="center"><a href="https://github.com/ItzNgga" target="_blank"><img src="https://avatars.githubusercontent.com/u/29621457?v=4" width="100px;" alt=""/></a><br />
+<sub><b>ItzNgga</b></sub><br /></td>
+    </tr>
+</table>
