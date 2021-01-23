@@ -92,8 +92,10 @@ Scan the QR Code
 <sub><b>ItzNgga</b></sub><br /></td>
     <td align="center"><a href="https://github.com/TobyG74" target="_blank"><img src="https://avatars.githubusercontent.com/u/32604979?v=4" width="100px;" alt=""/></a><br />
 <sub><b>TobyG74</b></sub><br /></td>
+    <td align="center"><a href="https://github.com/MhankBarBar" target="_blank"><img src="https://avatars.githubusercontent.com/u/55822959?v=4" width="100px;" alt=""/></a><br />
+<sub><b>MhankBarBar</b></sub><br /></td>
     </tr>
-</table><br />
+</table>
 And Much More
 
 ## Rest API
@@ -105,3 +107,4 @@ Don't forget to support them.
 - [Tobz API](https://tobz-api.herokuapp.com)
 - [Terhambar.com](https://scrap.terhambar.com)
 - [CF's API](https://api.computerfreaker.cf)
+- [Jikan.moe](https://api.jikan.moe)
