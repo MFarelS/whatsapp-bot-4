@@ -246,7 +246,7 @@ module.exports = msgHandler = async (client, message) => {
                     const mediaData = await decryptMedia(encryptMedia, uaOverride)
                     const imageBase64 = `data:${_mimetype};base64,${mediaData.toString('base64')}`
                     const base64img = imageBase64
-                    const result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'apikey', size: 'auto', type: 'auto' }) // Ambil di remove.bg
+                    const result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'apiKey', size: 'auto', type: 'auto' }) // Ambil di remove.bg
                     await client.sendImageAsSticker(from, `data:${_mimetype};base64,${result.base64img}`).then(() => {
                         console.log(`Sticker noBackground processed for ${processTime(t, moment())} seconds`)
                     })
