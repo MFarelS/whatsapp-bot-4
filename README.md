@@ -111,6 +111,10 @@ const options = {
 <sub><b>TobyG74</b></sub><br /></td>
     <td align="center"><a href="https://github.com/MhankBarBar" target="_blank"><img src="https://avatars.githubusercontent.com/u/55822959?v=4" width="100px;" alt=""/></a><br />
 <sub><b>MhankBarBar</b></sub><br /></td>
+    </tr>
+</table>
+<table>
+    <tr>
         <td align="center"><a href="https://github.com/ArugaZ" target="_blank"><img src="https://avatars.githubusercontent.com/u/53950128?v=4" width="100px;" alt=""/></a><br />
 <sub><b>ArugaZ</b></sub><br /></td>
         <td align="center"><a href="https://github.com/MfarelS" target="_blank"><img src="https://avatars.githubusercontent.com/u/58540890?v=4" width="100px;" alt=""/></a><br />
