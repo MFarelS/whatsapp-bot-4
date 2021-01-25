@@ -1,7 +1,7 @@
 <h1 align="center">WhatsApp Bot</h1>
 <p align="center">This project is the modification version of <a href="https://github.com/YogaSakti/imageToSticker" target="_blank">YogaSakti/imageToSticker</a></p>
 <br />
-<p>
+<p align="center">
     <a href="https://twitter.com/FaizBastomi"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/twitter.png?raw=true"></a>&nbsp;&nbsp;
     <a href="https://instagram.com/faiz_bastomy"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/instagram.png?raw=true"></a>&nbsp;&nbsp;
     <a href="https://facebook.com/faiz.bastomi"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/facebook.png?raw=true"></a>
@@ -111,6 +111,12 @@ const options = {
 <sub><b>TobyG74</b></sub><br /></td>
     <td align="center"><a href="https://github.com/MhankBarBar" target="_blank"><img src="https://avatars.githubusercontent.com/u/55822959?v=4" width="100px;" alt=""/></a><br />
 <sub><b>MhankBarBar</b></sub><br /></td>
+        <td align="center"><a href="https://github.com/ArugaZ" target="_blank"><img src="https://avatars.githubusercontent.com/u/53950128?v=4" width="100px;" alt=""/></a><br />
+<sub><b>ArugaZ</b></sub><br /></td>
+        <td align="center"><a href="https://github.com/MfarelS" target="_blank"><img src="https://avatars.githubusercontent.com/u/58540890?v=4" width="100px;" alt=""/></a><br />
+<sub><b>MfarelS</b></sub><br /></td>
+        <td align="center"><a href="https://github.com/beniismael" target="_blank"><img src="https://avatars.githubusercontent.com/u/74507319?v=4" width="100px;" alt=""/></a><br />
+<sub><b>beniismael</b></sub><br /></td>
     </tr>
 </table>
 And More People
