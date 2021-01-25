@@ -126,7 +126,7 @@ const options = {
 <sub><b>Nurutomo</b></sub><br /></td>
     </tr>
 </table>
-And More People
+And Others
 
 ## Rest API
 All Rest API that used in this project.<br />
