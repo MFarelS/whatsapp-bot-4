@@ -122,6 +122,8 @@ const options = {
 <sub><b>MfarelS</b></sub><br /></td>
         <td align="center"><a href="https://github.com/beniismael" target="_blank"><img src="https://avatars.githubusercontent.com/u/74507319?v=4" width="100px;" alt=""/></a><br />
 <sub><b>beniismael</b></sub><br /></td>
+        <td align="center"><a href="https://github.com/Nurutomo" target="_blank"><img src="https://avatars.githubusercontent.com/u/18616827?v=4" width="100px;" alt=""/></a><br />
+<sub><b>Nurutomo</b></sub><br /></td>
     </tr>
 </table>
 And More People
