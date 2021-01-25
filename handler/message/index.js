@@ -29,8 +29,8 @@ const sharp = require('sharp')
 const Exif = require('../../tools/exif')
 const exif = new Exif()
 const { RemoveBgResult, removeBackgroundFromImageBase64, removeBackgroundFromImageFile } = require('remove.bg')
-const { mtc: mtcState } = require('../../config.json')
-const { menuId, change } = require('./text') // Indonesian & English menu
+const { mtc: mtcState, zeksApikey, melodicxtApikey, tobzApikey } = require('../../config.json')
+const { menuId } = require('./text') // Indonesian menu
 
 const ban = JSON.parse(fs.readFileSync('./handler/message/data/banned.json'))
 const wel = JSON.parse(fs.readFileSync('./handler/message/data/welcome.json'))
@@ -211,9 +211,6 @@ module.exports = msgHandler = async (client, message) => {
         case 'info':
             await client.reply(from, monospace(menuId.textInfo()), id)
             break
-        case 'changelog':
-            await client.sendText(from, monospace(change.changeLog(prefix)))
-            break
         case 'menu':
             if (!args.length) return client.reply(from, `Hai, ${pushname}\nUntuk melihat list command kirimkan ${prefix}menu [menu]\nList menu bisa dilihat di ${prefix}help`, id)
             if (args[0] === 'download' || args[0] === 'Download') {
@@ -367,7 +364,7 @@ module.exports = msgHandler = async (client, message) => {
         case 'emoji':{
             try {
             const moji = args[0]
-            const image = await bent('buffer')(`https://api.zeks.xyz/api/emoji-image?apikey=apivinz&emoji=${encodeURIComponent(moji)}`)
+            const image = await bent('buffer')(`https://api.zeks.xyz/api/emoji-image?apikey=${zeksApikey}&emoji=${encodeURIComponent(moji)}`)
             const base64 = `data:image/png;base64,${image.toString('base64')}`
             await client.sendImageAsSticker(from, base64).then(() => {
                 console.log(`Processed for ${processTime(t, moment())}`)
@@ -609,24 +606,6 @@ module.exports = msgHandler = async (client, message) => {
                 client.reply(from, `Error: ${e.message}`, id)
             }
             break
-        case 'tik':
-            case 'tiktok':
-                if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-                // if (!args.length) return client.reply(from, 'Link tiktok nya mana?', id)
-                // try {
-                //     const input = args[0]
-                //     const res = await fetch(`http://docs-jojo.herokuapp.com/api/tiktok_nowm?url=${input}`)
-                //     const rest = await res.json()
-                //     if (rest.result[0].size.split(" MB")[0] > 20.00) {
-                //         client.sendFileFromUrl(from, rest.thumbnail, '', `*Caption:* ${rest.title}\n*Durasi:* ${rest.duration}\n*Size:* ${rest.result[0].size}\n\n_*Maaf Ukuran File Terlalu Besar!*_`)
-                //     } else {
-                //         client.sendFileFromUrl(from, rest.result[0].url, '', `*Caption:* ${rest.title}\n*Durasi:* ${rest.duration}\n*Size:* ${rest.result[0].size}\n\n_*TikTok Downloader Sukses*_`)
-                //     }
-                // } catch(e) {
-                //     console.error(e)
-                //     client.reply(from, `Error: ${e.message}`, id)
-                // }
-                break
         // Other Command
         case 'cat':
             try {
@@ -720,7 +699,7 @@ module.exports = msgHandler = async (client, message) => {
             }).catch(e => console.error(e))
             break
         case 'pakboi':
-            fetch('https://api.zeks.xyz/api/pantun?apikey=apivinz').then(async (res) => {
+            fetch(`https://api.zeks.xyz/api/pantun?apikey=${zeksApikey}`).then(async (res) => {
                 const {result: {pantun} } = await res.json()
                 client.reply(from, pantun, id)
             }).catch(e => console.error(e))
@@ -736,21 +715,21 @@ module.exports = msgHandler = async (client, message) => {
             break
         }
         case 'gempa':{
-            const res = await fetch('https://tobz-api.herokuapp.com/api/infogempa?apikey=BotWeA')
+            const res = await fetch(`https://tobz-api.herokuapp.com/api/infogempa?apikey=${tobzApikey}`)
             const { kedalaman, koordinat, lokasi, magnitude, map, potensi, waktu} = await res.json()
             await client.sendFileFromUrl(from, map, 'map.png', `Lokasi: ${lokasi}\nKoordinat: ${koordinat}\nKedalaman: ${kedalaman}\nMagnitudo: ${magnitude}\nPotensi: ${potensi}\n\n_${waktu}_`)
         }
         case 'nulis':
             if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-            // try {
-            //     const input = args.join(" ")
-            //     const res = await fetch(`https://api-melodicxt-2.herokuapp.com/api/joki-nulis?text=${encodeURIComponent(input)}&apiKey=administrator`)
-            //     const { result:{result} } = await res.json()
-            //     await client.sendFileFromUrl(from, result, 'pict.png', 'Nih pemalas', id)
-            // } catch(err) {
-            //     console.error(err.message)
-            //     client.reply(from, `Error"\n${err}`, id)
-            // }
+            try {
+                const input = args.join(" ")
+                const res = await fetch(`https://api-melodicxt-2.herokuapp.com/api/joki-nulis?text=${encodeURIComponent(input)}&apiKey=${melodicxtApikey}`)
+                const { result:{result} } = await res.json()
+                await client.sendFileFromUrl(from, result, 'pict.png', 'Nih pemalas', id)
+            } catch(err) {
+                console.error(err.message)
+                client.reply(from, `Error"\n${err}`, id)
+            }
             break
         case 'nulis2':{
             const input = args.join(" ")
@@ -858,7 +837,7 @@ module.exports = msgHandler = async (client, message) => {
             case 'heroml':{
                 if (!args.length) return client.reply(from, `No hero name!`, id)
                 const input = args[0]
-                axios.get(`http://api-melodicxt-2.herokuapp.com/api/mobilelegends/hero-detail?query=${input}&apiKey=administrator`)
+                axios.get(`http://api-melodicxt-2.herokuapp.com/api/mobilelegends/hero-detail?query=${input}&apiKey=${melodicxtApikey}`)
                 .then(async (res) => {
                     if (res.data.status === false) return client.reply(from, `No hero found\nMaybe try ${prefix}listhero`, id)
                     const { hero_name, image, character, role, background_story } = await res.data.result
@@ -868,7 +847,7 @@ module.exports = msgHandler = async (client, message) => {
             }
                 break
         case 'listhero':
-            axios.get('http://api-melodicxt-2.herokuapp.com/api/mobilelegends/list-hero?apiKey=administrator').then((res) => {
+            axios.get(`http://api-melodicxt-2.herokuapp.com/api/mobilelegends/list-hero?apiKey=${melodicxtApikey}`).then((res) => {
                 client.reply(from, `${res.data.result.map((x, index) => index + 1 + " ." + `${x}`).join("\n")}`, id)
             }).catch(e => console.error(e))
             break
@@ -915,23 +894,9 @@ module.exports = msgHandler = async (client, message) => {
                 client.sendFileFromUrl(from, res.data.url, '', '', id, {headers:{'User-Agent':'botwaa/v1/indo/remake'}})
             })
             break
-        case 'loli':
-            if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-        //     try {
-        //         const image = await bent('buffer')('http://docs-jojo.herokuapp.com/api/randomloli')
-        //         const base64 = `data:image/jpg;base64,${image.toString('base64')}`
-        //         client.sendImage(from, base64, '', 'Nih Loli, ingat dijaga', id).catch((e) => {
-        //             console.error(e)
-        //             client.reply(from, `Error: ${e.message}`, id)
-        //         })
-        //     } catch(e) {
-        //         console.error(e)
-        //         client.reply(from, `${e}`, id)
-        //     }
-            break
             case 'neko2':
                 try {
-                    const res = await fetch('https://tobz-api.herokuapp.com/api/nekonime?apikey=BotWeA')
+                    const res = await fetch(`https://tobz-api.herokuapp.com/api/nekonime?apikey=${tobzApikey}`)
                     const rest = await res.json()
                     await client.sendFileFromUrl(from, rest.result, 'pict.png', '', id)
                 } catch (err) {
@@ -940,7 +905,7 @@ module.exports = msgHandler = async (client, message) => {
                 break
             case 'waifu':
                 try {
-                    const res = await fetch('http://docs-jojo.herokuapp.com/api/waifu')
+                    const res = await fetch(`http://tobz-api.herokuapp.com/api/waifu?apikey=${tobzApikey}`)
                     const rest = await res.json()
                     await client.sendFileFromUrl(from, rest.image, 'pict.png', rest.name, id)
                 } catch(err) {
@@ -948,7 +913,7 @@ module.exports = msgHandler = async (client, message) => {
                 }
                 break
             case 'husbu':{
-                const res = await fetch('http://docs-jojo.herokuapp.com/api/husbuando')
+                const res = await fetch(`http://tobz-api.herokuapp.com/api/husbu?apikey=${tobzApikey}`)
                 const rest = await res.json()
                 await client.sendFileFromUrl(from, rest.image, '', rest.name, id)
             }
@@ -1022,7 +987,7 @@ Url: ${res.url}`
             }
             break
             case 'aniquote':
-                axios.get('http://api-melodicxt-2.herokuapp.com/api/get/anime-quotes?apiKey=administrator').then(async (res) => {
+                axios.get(`http://api-melodicxt-2.herokuapp.com/api/get/anime-quotes?apiKey=${melodicxtApikey}`).then(async (res) => {
                     const { result } = await res.data
                     client.reply(from, `*From:* ${result.anime}\n\n*Quotes:* ${result.quote}\n\n~${result.chara}`, id)
                     .catch((e) => {console.error(e)})
@@ -1040,20 +1005,6 @@ Url: ${res.url}`
                     })
                 })
                 break
-            // case 'nhview':
-            //     if (!args.length) return client.reply(from, `Tidak ada kode nuklir, contoh ${prefix}nhview 150306`, id)
-            //     try {
-            //         const api = new API()
-            //         const input = args[0]
-            //         api.fetchDoujin(input).then(async (doujin) => {
-            //             const text = `*English:* ${doujin.titles.english}\n*Japan:* ${doujin.titles.japanese}\n*Simple:* ${doujin.titles.pretty}\n\n*Tags:* ${doujin.tags.map(tag => tag.name).join(', ')}\n*Page:* ${doujin.length} pages\n*Link:* ${doujin.url}`
-            //             await client.sendFileFromUrl(from, doujin.cover.url, '', text, id)
-            //         })
-            //     } catch(err) {
-            //         console.error(err)
-            //         await client.reply(from, `Error: ${err.message}`, id)
-            //     }
-            //     break
             // Other Command
         case 'wiki':
             if (args.length == 0) return await client.reply(from, 'Masukan kata kata untuk dicari! Contoh -wiki ikan', id)
@@ -1065,33 +1016,8 @@ Url: ${res.url}`
                 client.reply(from, `Error:\n${e}`, id)
             })
             break
-        case 'quotemk':
-            if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-        //     if (args.length === 0) return client.reply(from, `Penggunaan ${prefix}quotemk quotes|auhtor|tema\nTema yg tersedia: - random\n- heart\n- city\n- beach\n- party\n- rain`, id)
-        //     if (!args.includes('|')) return client.reply(from, `Penggunaan ${prefix}quotemk quotes|auhtor|tema\nTema yg tersedia: - random\n- heart\n- city\n- beach\n- party\n- rain`, id)
-        //     const quote = arg.split('|')[0]
-        //     const author = arg.split('|')[1]
-        //     const theme = arg.split('|')[2]
-        //     if (theme) {
-        //         const image = await bent('buffer')(`https://terhambar.com/aw/qts/proses.php?kata=${encodeURIComponent(quote)}&author=${encodeURIComponent(author)}&tipe=${encodeURIComponent(theme)}&font=./font/font2.ttf&size=55`)
-        //         const base64 = `data:image/jpeg;base64,${image.toString("base64")}`
-        //     await client.sendFile(from, base64, 'quotes.jpg', 'Anjay jadi!', id)
-        //     } else {
-        //         const image = await bent('buffer')(`https://terhambar.com/aw/qts/proses.php?kata=${encodeURIComponent(quote)}&author=${encodeURIComponent(author)}&tipe=random&font=./font/font2.ttf&size=55`)
-        //         const base64 = `data:image/jpeg;base64,${image.toString("base64")}`
-        //         await client.sendFileFromUrl(from, base64, 'quotes.jpg', 'Anjay jadi!', id)
-        //     }
-            break
-        case 'pantai':
-            if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-        //     if (args.length === 0) return client.reply(from, `Penggunaan ${prefix}pantai [kata-kata]`, id)
-        //     await client.sendFileFromUrl(from, `https://terhambar.com/aw/qts/proses.php?kata=${args.join(" ")}&author=_&tipe=beach&font=./font/font2.ttf&size=55`, 'quotes.jpg', 'Anjay jadi!', id)
-        //     .catch((e) => {
-        //         client.reply(from, `Error:\n${e}`, id)
-        //     })
-            break
         case 'randomquotes':
-            axios.get('https://tobz-api.herokuapp.com/api/randomquotes?apikey=BotWeA')
+            axios.get(`https://tobz-api.herokuapp.com/api/randomquotes?apikey=${tobzApikey}`)
             .then((res) => {
                 const text = `*Author:* ${res.data.author}\n*Quote:* ${res.data.quotes}`
                 client.reply(from, `${text}`, id)
@@ -1115,7 +1041,7 @@ Url: ${res.url}`
         case 'tahta': {
             if (args.length > 1) return client.reply(from, 'Masukan 1 kata saja', id)
             const input = args[0]
-            const image = await bent('buffer')(`http://api.zeks.xyz/api/hartatahta?text=${encodeURIComponent(input)}&apikey=apivinz`)
+            const image = await bent('buffer')(`http://api.zeks.xyz/api/hartatahta?text=${encodeURIComponent(input)}&apikey=${zeksApikey}`)
             const base64 = `data:image/jpg;base64,${image.toString('base64')}`
             await client.sendImage(from, base64, 'tahta.jpg', `Harta\nTahta\n*${input}*`, id)
         }
@@ -1204,19 +1130,6 @@ Url: ${res.url}`
                         client.reply(from, `Error: ${e.message}`, id)
                     }
                     break
-                case 'future':
-                    if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-                //     if (!args.length) return client.reply(from, `Format pesan salah. Contoh ${prefix}future FaizBastomi`, id)
-                //     try {
-                //         const input = args.join(" ")
-                //         const image = await bent('buffer')(`http://docs-jojo.herokuapp.com/api/neon_light?text=${encodeURIComponent(input)}`)
-                //         const base64 = `data:image/jpeg;base64,${image.toString('base64')}`
-                //         await client.sendImage(from, base64, '', 'Anjay Jadi', id)
-                //     } catch(e) {
-                //         console.error(e)
-                //         client.reply(from, `Error: ${e.message}`, id)
-                //     }
-                    break
                 case '3dtext':
                     if (args.length < 1) return client.reply(from, `Format pesan salah. Contoh ${prefix}3dtext FaizBastomi`, id)
                     try {
@@ -1229,19 +1142,6 @@ Url: ${res.url}`
                         console.error(e)
                         client.reply(from, `Error: ${e.message}`, id)
                     }
-                    break
-                case 'wolf':
-                    if (mtcState) return client.reply(from, monospace(mess.mtc), id)
-                //     if (!args.length) return client.reply(from, `Format pesan salah. Contoh ${prefix}wolf Faiz | Bastomi`, id)
-                //     if (!args.includes('|')) return client.reply(from, `Format pesan salah. Contoh ${prefix}wolf Faiz | Bastomi`, id)
-                //     try {
-                //         const text1 = arg.split('|')[0]
-                //         const text2 = arg.split('|')[1]
-                //         await client.sendFileFromUrl(from, `http://docs-jojo.herokuapp.com/api/wolf?text1=${encodeURIComponent(text1)}&text2=${encodeURIComponent(text2)}`, '', 'anjay jadi', id)
-                //     } catch(e) {
-                //         console.error(e)
-                //         client.reply(from, `Error: ${e.message}`, id)
-                //     }
                     break
             case 'glitch':
                 if (args.length < 2) return client.reply(from, `Format pesan salah, Contoh ${prefix}glitch Midnight | Bot`, id)

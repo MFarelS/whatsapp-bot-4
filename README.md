@@ -8,7 +8,8 @@
 - ffmpeg [Download](https://ffmpeg.org) and [Tutorial](https://youtu.be/04Gf6TEnmjk)<br />
 To get YouTube Cookie [Add to Chrome](http://bit.ly/3pb05kJ)<br />
 To get YouTube ApiKey [Tutorial](https://www.slickremix.com/docs/get-api-key-for-youtube/)<br />
-Change ownerNumber [Here](https://github.com/FaizBastomi/whatsapp-bot/blob/b0c39845020f91202e538d909499d0ee17b02729/handler/message/index.js#L48) (Don't forget use `@c.us`)
+Change ownerNumber [Here](https://github.com/FaizBastomi/whatsapp-bot/blob/b0c39845020f91202e538d909499d0ee17b02729/handler/message/index.js#L48) (Don't forget use `@c.us`)<br />
+Fill all apikey [Here](https://github.com/FaizBastomi/whatsapp-bot/blob/master/config.json)
 
 # Get Started
 ## Install
@@ -106,10 +107,10 @@ const options = {
 <sub><b>MhankBarBar</b></sub><br /></td>
     </tr>
 </table>
-And Much More
+And More People
 
 ## Rest API
-The Rest API that used in this project.<br />
+All Rest API that used in this project.<br />
 Don't forget to support them.
 - [JoJo API](https://docs-jojo.herokuapp.com)
 - [Melodicxt API](https://api-melodicxt-2.herokuapp.com)
@@ -118,6 +119,7 @@ Don't forget to support them.
 - [Terhambar.com](https://scrap.terhambar.com)
 - [CF's API](https://api.computerfreaker.cf)
 - [Jikan.moe](https://api.jikan.moe)
+- [ArugaZ](https://arugaz.my.id)
 
 ## Main Library
 - [wa-automate-nodejs](https://github.com/open-wa/wa-automate-nodejs)

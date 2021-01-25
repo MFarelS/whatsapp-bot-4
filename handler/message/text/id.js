@@ -18,9 +18,7 @@ NodeJS WhatsApp library: https://github.com/open-wa/wa-automate-nodejs`
 
 exports.textDonasi = () => {
     return `Trakteer: https://trakteer.id/faiz-bastomy
-Saweria: https://saweria.co/faizbastomy
-DANA: 085382618855
-OVO: 085382618855`
+Saweria: https://saweria.co/faizbastomy`
 }
 
 exports.textMenu = (pushname, prefix) => {
@@ -124,9 +122,6 @@ _*${prefix}pins*_ = Mengunduh Gambar Dari Pinterest
 
 _*${prefix}ytsch*_ = Mencari Video YouTube Berdasarkan Query
 
-~_*${prefix}tik*_ = TikTok Downloader~
-    ~Contoh; ${prefix}tik <link_tiktok>~
-
 _*${prefix}nhder*_ = Nhentai Downloader
     Contoh; ${prefix}nhder 150306`
 }
@@ -157,7 +152,7 @@ _*${prefix}meme*_ = Get Random Meme From Subreddit
 
 _*${prefix}getses*_ = Ambil SS dari Sesi Saat Ini
 
-~_*${prefix}pakboi*_ = Ambil Pantun Random Pakboi~
+_*${prefix}pakboi*_ = Ambil Pantun Random Pakboi
 
 _*${prefix}sadboi*_ = Ambil Random Quotes Sadboi
 
@@ -197,8 +192,6 @@ _*${prefix}randomanime*_ = Random Anime Image
 
 _*${prefix}neko*_ = Random Neko
 
-~_*${prefix}loli*_ = Random Loli~
-
 _*${prefix}neko2*_ = Random Neko2
 
 _*${prefix}anime*_ = Cari Anime Berdasarkan Query
@@ -223,11 +216,7 @@ _*${prefix}neontext*_ = Bikin Text Neon
 
 _*${prefix}thunder*_ = Bikin Text Thunder
 
-~_*${prefix}future*_ = Bikin Logo Futuristik~
-
 _*${prefix}3dtext*_ = Bikin 3D Text
-
-~_*${prefix}wolf*_ = Bikin Logo Serigala~
 
 _*${prefix}marvel*_ = Bikin Text Marvel
 
@@ -246,12 +235,6 @@ _*${prefix}sand1*_ = Bikin Text di Pasir
 _*${prefix}glue3d*_ = Bikin Text 3D Glue
 
 _*${prefix}luxury*_ = Bikin Text Luxury
-
-~_*${prefix}quotemk*_ = Bikin Quotes~
-    ~Contoh; ${prefix}quotemk [quotes|author|theme]~
-        
-~_*${prefix}pantai*_ = Tulis Pantai~
-    ~Contoh; ${prefix}pantai [quotes]~
 
 _*${prefix}nulis*_ = Nulis dibuku
     Contoh; ${prefix}nulis hai

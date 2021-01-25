@@ -1,4 +1,7 @@
 {
     "YT_API": "YT_API",
+    "tobzApikey": "",
+    "zeksApikey": "",
+    "melodicxtApikey": "",
     "mtc": true
 }
