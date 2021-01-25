@@ -246,7 +246,7 @@ module.exports = msgHandler = async (client, message) => {
                     const mediaData = await decryptMedia(encryptMedia, uaOverride)
                     const imageBase64 = `data:${_mimetype};base64,${mediaData.toString('base64')}`
                     const base64img = imageBase64
-                    const result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'PFD443zmtgRiaDP7mGQ7krvN', size: 'auto', type: 'auto' })
+                    const result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'apikey', size: 'auto', type: 'auto' }) // Ambil di remove.bg
                     await client.sendImageAsSticker(from, `data:${_mimetype};base64,${result.base64img}`).then(() => {
                         console.log(`Sticker noBackground processed for ${processTime(t, moment())} seconds`)
                     })
@@ -460,8 +460,8 @@ module.exports = msgHandler = async (client, message) => {
             if (args.length < 1) return client.reply(from, `Tidak ada teks untuk dijadikan stiker, contoh ${prefix}ttp halo`, id)
             try {
                 const input = args.join(" ")
-                const res = await axios.get(`https://st4rz.herokuapp.com/api/ttp?kata=${encodeURIComponent(input)}`)
-                await client.sendImageAsSticker(from, res.data.result).catch((e) => {
+                const res = await axios.get(`https://tobz-api.herokuapp.com/api/ttp?text=${encodeURIComponent(input)}&apikey=${tobzApikey}`)
+                await client.sendImageAsSticker(from, res.data.base64).catch((e) => {
                     console.error(e)
                     client.reply(from, `Error: ${e.message}`, id)
                 })
