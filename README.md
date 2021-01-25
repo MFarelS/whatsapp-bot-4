@@ -6,7 +6,7 @@
 - LibWebP [Download](https://developers.google.com/speed/webp/download)
 - imagemagick [Download](https://imagemagick.org/script/download.php) (checklist 1,2,3,5,6)
 - ffmpeg [Download](https://ffmpeg.org) and [Tutorial](https://youtu.be/04Gf6TEnmjk)<br />
-To get YouTube Cookie [Add to Chrome](http://bit.ly/3pb05kJ)<br />
+To get YouTube Cookie [Add to Chrome](http://bit.ly/3pb05kJ) and fill [this](https://github.com/FaizBastomi/whatsapp-bot/blob/master/handler/message/data/cookie.json)<br />
 To get YouTube ApiKey [Tutorial](https://www.slickremix.com/docs/get-api-key-for-youtube/)<br />
 Change ownerNumber [Here](https://github.com/FaizBastomi/whatsapp-bot/blob/b0c39845020f91202e538d909499d0ee17b02729/handler/message/index.js#L48) (Don't forget use `@c.us`)<br />
 Fill all apikey [Here](https://github.com/FaizBastomi/whatsapp-bot/blob/master/config.json)
