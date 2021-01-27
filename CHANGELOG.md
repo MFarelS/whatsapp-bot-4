@@ -3,6 +3,7 @@
 - 27 January 2021
 
 * Add .gitignore files
+* Changes some file place
 
 - 25 January 2021
 

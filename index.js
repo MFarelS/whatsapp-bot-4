@@ -4,7 +4,7 @@ const figlet = require('figlet')
 const lolcatjs = require('lolcatjs')
 // const msgHandler = require('./handler/message')
 const fs = require('fs')
-const { welcome } = require('./welcome')
+const { welcome } = require('./tools/welcome')
 
 /**
  * Auto Update By Nurutomo
