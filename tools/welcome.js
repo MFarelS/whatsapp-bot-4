@@ -1,6 +1,6 @@
 const fs = require('fs-extra')
 const canvas = require('discord-canvas')
-const { sleep } = require('./utils')
+const { sleep } = require('../utils')
 
 async function welcome(client, event) {
 
