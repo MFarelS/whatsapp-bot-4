@@ -17,7 +17,7 @@
   "homepage": "https://github.com/FaizBastomi/whatsapp-bot",
   "license": "MIT",
   "dependencies": {
-    "@open-wa/wa-automate": "^3.1.15",
+    "@open-wa/wa-automate": "^3.2.0",
     "@vitalets/google-translate-api": "^4.0.0",
     "axios": "^0.21.1",
     "bent": "^7.3.12",

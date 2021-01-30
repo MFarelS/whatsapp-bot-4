@@ -10,8 +10,8 @@ const { welcome } = require('./tools/welcome')
  * Auto Update By Nurutomo
  * Thanks For Nurutomo
  */
-require('./handler/message/index.js')
-nocache('./handler/message/index.js', module => console.log(`${module} Updated!`))
+require('./handler/message/index1.js')
+nocache('./handler/message/index1.js', module => console.log(`${module} Updated!`))
 require('./handler/message/text/id.js')
 nocache('./handler/message/text/id.js', module => console.log(`${module} Updated!`))
 
@@ -38,7 +38,7 @@ const start = (client = new Client()) => {
         client.getAmountOfLoadedMessages().then((msg) => (msg >= 1000) && client.cutMsgCache())
 
         // Message Handler (Loaded From Recent Cache)
-        require('./handler/message/index.js')(client, message)
+        require('./handler/message/index1.js')(client, message)
     })
 
     // listen group invitation
@@ -67,7 +67,7 @@ const options = {
     executablePath: "/usr/bin/google-chrome-stable",
     killProcessOnBrowserClose: true,
     throwErrorOnTosBlock: false,
-    stickerServerEndpoint: false,
+    stickerServerEndpoint: true,
     chromiumArgs: [
         '--no-sandbox',
         '--disable-setuid-sandbox',

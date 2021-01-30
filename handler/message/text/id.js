@@ -172,7 +172,11 @@ _*${prefix}googleimg*_ = Mencari Gambar Dari Google
 
 _*${prefix}heroml*_ = Cek Detail Info Hero ML
 
-_*${prefix}tahta*_ = Harta Tahta`
+_*${prefix}tahta*_ = Harta Tahta
+
+_*${prefix}nulis*_ = Nulis
+
+_*${prefix}nulis2*_ = Nulis`
 }
 
 exports.Wibu = (prefix) => {
@@ -199,48 +203,6 @@ _*${prefix}anime*_ = Cari Anime Berdasarkan Query
 _*${prefix}chara*_ = Mencari Chara Berdasarkan Query
 
 _*${prefix}manga*_ = Mencari Informasi Manga Berdasarkan Query`
-}
-
-exports.TextPro = (prefix) => {
-    return `_*TextPro Menu:*_
-    
-_*${prefix}pornhub*_ = Bikin Text Pornhub
-
-_*${prefix}blackpink*_ = Bikin Text Blackpink
-
-_*${prefix}glitch*_ = Bikin Text Glitch
-
-_*${prefix}neonlight*_ = Bikin Text Neon
-
-_*${prefix}neontext*_ = Bikin Text Neon
-
-_*${prefix}thunder*_ = Bikin Text Thunder
-
-_*${prefix}3dtext*_ = Bikin 3D Text
-
-_*${prefix}marvel*_ = Bikin Text Marvel
-
-_*${prefix}sky*_ = Bikin Text Awan
-
-_*${prefix}glow*_ = Bikin Advanced Glow Text
-
-_*${prefix}ballon*_ = Bikin Text Foil Ballon
-
-_*${prefix}matrix*_ = Bikin Text Matrix
-
-_*${prefix}sand*_ = Bikin Text di Pasir
-
-_*${prefix}sand1*_ = Bikin Text di Pasir
-
-_*${prefix}glue3d*_ = Bikin Text 3D Glue
-
-_*${prefix}luxury*_ = Bikin Text Luxury
-
-_*${prefix}nulis*_ = Nulis dibuku
-    Contoh; ${prefix}nulis hai
-
-_*${prefix}nulis2*_ = Nulis dibuku2
-    Contoh; ${prefix}nulis hai`
 }
 
 exports.funMenu = (prefix) => {

@@ -248,7 +248,7 @@ module.exports = msgHandler = async (client, message) => {
                     const imageBase64 = `data:${_mimetype};base64,${mediaData.toString('base64')}`
                     const base64img = imageBase64
                     const result = await removeBackgroundFromImageBase64({ base64img, apiKey: 'apiKey', size: 'auto', type: 'auto' }) // Ambil di remove.bg
-                    await client.sendImageAsSticker(from, `data:${_mimetype};base64,${result.base64img}`).then(() => {
+                    await client.sendImageAsSticker(from, `data:${_mimetype};base64,${result.base64img}`, { author: 'by @faiz_bastomy', pack: 'MidnightBot'}).then(() => {
                         console.log(`Sticker noBackground processed for ${processTime(t, moment())} seconds`)
                     })
                 } catch(err) {
@@ -264,26 +264,10 @@ module.exports = msgHandler = async (client, message) => {
         case 'stiker': {
             if ((isMedia || isQuotedImage) && args.length === 0) {
                 const encryptMedia = isQuotedImage ? quotedMsg : message
+                const _mimetype = isQuotedImage ? quotedMsg.mimetype : mimetype
                 const mediaData = await decryptMedia(encryptMedia, uaOverride)
                 await client.reply(from, mess.tunggu, id)
-                webp.buffer2webpbuffer(mediaData, 'jpg', '-q 100')
-                .then((res) => {
-                    sharp(res)
-                    .resize(512, 512)
-                    .toFile(`./temp/stage_${sender.id}.webp`, async (err) => {
-                        if (err) return console.error(err)
-                        exec(`webpmux -set exif ./temp/biasa.exif ./temp/stage_${sender.id}.webp -o ./temp/${sender.id}.webp`)
-                        await sleep(2000)
-                        const data = fs1.readFileSync(`./temp/${sender.id}.webp`)
-                        const base64 = `data:image/webp;base64,${data.toString('base64')}`
-                        await client.sendRawWebpAsSticker(from, base64)
-                        fs1.unlinkSync(`./temp/stage_${sender.id}.webp`)
-                        fs1.unlinkSync(`./temp/${sender.id}.webp`)
-                    })
-                }).catch((err) => {
-                    console.error(err)
-                    client.reply(from, `${err}`, id)
-                })
+                await client.sendImageAsSticker(from, `data:${_mimetype};base64,${mediaData.toString('base64')}`, { author: 'by @faiz_bastomy', pack: 'MidnightBot'})
             } else if (args[0] === 'nocrop') {
                 try {
                     const encryptMedia = isQuotedImage ? quotedMsg : message
@@ -309,7 +293,7 @@ module.exports = msgHandler = async (client, message) => {
                 }
                 await sleep(2000)
                 const media = await fs.readFile(`./temp/stage_${from}.png`, { encoding: 'base64' })
-                await client.sendImageAsSticker(from, `data:image/png;base64,${media.toString('base64')}`)
+                await client.sendImageAsSticker(from, `data:image/png;base64,${media.toString('base64')}`, { author: 'by @faiz_bastomy', pack: 'MidnightBot'})
                 fs.unlinkSync(`./temp/nocrop_${from}.${mime.extension(mimetype)}`)
                 fs.unlinkSync(`./temp/stage_${from}.png`)
             } else if (args.length === 1) {
@@ -367,7 +351,7 @@ module.exports = msgHandler = async (client, message) => {
             const moji = args[0]
             const image = await bent('buffer')(`https://api.zeks.xyz/api/emoji-image?apikey=${zeksApikey}&emoji=${encodeURIComponent(moji)}`)
             const base64 = `data:image/png;base64,${image.toString('base64')}`
-            await client.sendImageAsSticker(from, base64).then(() => {
+            await client.sendImageAsSticker(from, base64, { author: 'by @faiz_bastomy', pack: 'MidnightBot'}).then(() => {
                 console.log(`Processed for ${processTime(t, moment())}`)
             }).catch((e) => {
                 console.error(e)
@@ -390,7 +374,7 @@ module.exports = msgHandler = async (client, message) => {
                     const mediaData = await decryptMedia(encryptMedia, uaOverride)
                     const getUrl = await uploadImages(mediaData, false)
                     const imageBase64 = await meme.custom(getUrl, top, bottom)
-                    client.sendImageAsSticker(from, imageBase64).then(() => {
+                    client.sendImageAsSticker(from, imageBase64, { author: 'by @faiz_bastomy', pack: 'MidnightBot'}).then(() => {
                         console.log(`Sticker Processed for ${processTime(t, moment())} Second`)
                     })
                 } else {
@@ -415,7 +399,7 @@ module.exports = msgHandler = async (client, message) => {
                                 try {
                                     const mediaData = await decryptMedia(message, uaOverride)
                                     await client.reply(from, mess.tunggu, id)
-                                    await client.sendMp4AsSticker(from, mediaData, {fps: 15, startTime: `00:00:00.0`, endTime: `00:00:05.0`, loop: 0, crop: false, log: true}).then(() => {
+                                    await client.sendMp4AsSticker(from, mediaData, null, { author: 'by @faiz_bastomy', pack: 'MidnightBot'}).then(() => {
                                         console.log('Send Sticker Gif Success to '+pushname)
                                     })
                                 } catch(e) {
@@ -462,7 +446,7 @@ module.exports = msgHandler = async (client, message) => {
             try {
                 const input = args.join(" ")
                 const res = await axios.get(`https://tobz-api.herokuapp.com/api/ttp?text=${encodeURIComponent(input)}&apikey=${tobzApikey}`)
-                await client.sendImageAsSticker(from, res.data.base64).catch((e) => {
+                await client.sendImageAsSticker(from, res.data.base64, { author: 'by @faiz_bastomy', pack: 'MidnightBot'}).catch((e) => {
                     console.error(e)
                     client.reply(from, `Error: ${e.message}`, id)
                 })
