@@ -1,7 +1,7 @@
 {
-  "name": "whatsapp-bot-sticker-creator",
+  "name": "whatsapp-bot",
   "version": "10.0.0",
-  "description": "Whatsapp Bot - sticker creator",
+  "description": "Whatsapp Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -17,7 +17,7 @@
   "homepage": "https://github.com/FaizBastomi/whatsapp-bot",
   "license": "MIT",
   "dependencies": {
-    "@open-wa/wa-automate": "^3.2.0",
+    "@open-wa/wa-automate": "^3.3.1",
     "@vitalets/google-translate-api": "^4.0.0",
     "axios": "^0.21.1",
     "bent": "^7.3.12",
