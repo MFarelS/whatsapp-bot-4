@@ -1,3 +1,7 @@
+<p align="center">
+<img height="40px;" src="https://img.shields.io/badge/❤️Maintened-idk-red.svg?style=flat-square"/>
+</p>
+
 <h1 align="center">WhatsApp Bot</h1>
 <p align="center">This project is the modification version of <a href="https://github.com/YogaSakti/imageToSticker" target="_blank">YogaSakti/imageToSticker</a></p>
 <br />
@@ -5,10 +9,6 @@
     <a href="https://twitter.com/FaizBastomi"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/twitter.png?raw=true"></a>&nbsp;&nbsp;
     <a href="https://instagram.com/faiz_bastomy"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/instagram.png?raw=true"></a>&nbsp;&nbsp;
     <a href="https://facebook.com/faiz.bastomi"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/facebook.png?raw=true"></a>
-</p>
-
-<p align="center">
-<img src="https://img.shields.io/badge/%E2%9D%A4%EF%B8%8FMaintened-idk-red.svg?style=flat-square"/>
 </p>
 
 # Needed
@@ -142,7 +142,7 @@ Don't forget to support them.
 - [Terhambar.com](https://scrap.terhambar.com)
 - [CF's API](https://api.computerfreaker.cf)
 - [Jikan.moe](https://api.jikan.moe)
-- [ArugaZ](https://arugaz.my.id)
+- [ArugaZ](https://api.arugaz.my.id/api)
 
 ## Main Library
 - [wa-automate-nodejs](https://github.com/open-wa/wa-automate-nodejs)
