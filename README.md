@@ -7,9 +7,9 @@
     <a href="https://facebook.com/faiz.bastomi"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/facebook.png?raw=true"></a>
 </p>
 
-<div lign="center">
+<p align="center">
 <img src="https://img.shields.io/badge/%E2%9D%A4%EF%B8%8FMaintened-idk-red.svg?style=flat-square"/>
-</div>
+</p>
 
 # Needed
 - NodeJS 14x [Download](https://nodejs.org/en/download)
