@@ -7,6 +7,10 @@
     <a href="https://facebook.com/faiz.bastomi"><img height="30" src="https://github.com/FaizBastomi/faizbastomi/blob/master/facebook.png?raw=true"></a>
 </p>
 
+<div lign="center">
+<img src="https://img.shields.io/badge/%E2%9D%A4%EF%B8%8FMaintened-idk-red.svg?style=flat-square"/>
+</div>
+
 # Needed
 - NodeJS 14x [Download](https://nodejs.org/en/download)
 - LibWebP [Download](https://developers.google.com/speed/webp/download)
